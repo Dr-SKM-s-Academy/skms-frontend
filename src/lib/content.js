@@ -15,11 +15,11 @@ export const DEFAULTS = {
     eyebrow: 'Highly Recommended',
     headline: 'Face Real Cases.\n*Sharpen Your Clinical Thinking.*',
     body: [
-      'Introducing an **AI-integrated Realistic Clinical Scenario Learning Platform** — built to bridge the gap between classroom knowledge and real clinical practice.',
+      'Highly Recommended for Medical Students for final year examination and Doctors Preparing for Gulf licensing and other Competitive Clinical Examinations Worldwide.',
       'Master the most common, must-know clinical cases faster than ever through realistic AI-powered patient–doctor video learning.',
     ],
     pills: ['Final Year Medical Students', 'Gulf Licensing Candidates', 'Competitive Clinical Examinations Worldwide'],
-    quote: 'Our innovative AI-powered learning platform bridges the gap between classroom knowledge and real clinical practice.',
+    quote: 'Our innovative AI-powered live patient videos will bridge the gap between classroom knowledge and real-world clinical practice.',
   },
 
   /* Plans live in the app database (`plans` table): title, price, days, access label and features come from there.
@@ -74,7 +74,6 @@ export const DEFAULTS = {
     { name: 'Dr. Shahana Kuruniyan', role: 'Dermatology', photo: 'img/fac-shahana.jpg' },
     { name: 'Dr. Saadia', role: 'Gen. Physician-Prometric Exam Tutor', photo: 'img/fac-saadia.jpg' },
     { name: 'Dr. Sofia John', role: 'OMSB Licensed Gen. Surgeon', photo: 'img/fac-sofia.jpg' },
-    { name: 'Dr. Suhail Ahamed', role: 'Doctor of AI Media Production', photo: 'img/fac-suhail.jpg' },
     { name: 'Dr. Nandita', role: 'Specialist pediatrician', photo: 'img/fac-nandita.jpg' },
   ],
 
@@ -85,7 +84,7 @@ export const DEFAULTS = {
     { q: 'Which Gulf licensing examinations does the Academy cover?', a: 'We cover all major Gulf licensing examinations including HAAD, DHA, and MOH (UAE), SLE (Saudi Arabia). QCHP (Qatar), NHRA (Bahrain), MOH Kuwait, and OMSB (Oman). Content is updated each examination cycle' },
     { q: 'How does the AI clinical learning system work?', a: 'Our AI recreates realistic patient–doctor encounters as video scenarios. You observe history taking, examination technique and reasoning, then work through case-based MCQs built on the same case.' },
     { q: 'Are the courses taught by qualified faculty?', a: 'Yes. Every course is delivered by licensed specialists and surgeons practising in the GCC, supported by our AI media production team.' },
-    { q: 'Is there a refund policy?', a: 'Plans are refundable within 48 hours of purchase provided less than 10% of the course content has been accessed. Write to drakmsacademy@gmail.com to start a request.' },
+    { q: 'Is there a refund policy?', a: 'Plans are refundable within 48 hours of purchase provided less than 10% of the course content has been accessed. Write to contact@drskmacademy.com to start a request.' },
     { q: 'Can I access the content on mobile?', a: "Yes — the SKM's Academy app is available on the Apple Store and Play Store, and your plan syncs across web and mobile." },
     { q: 'How long does a plan stay active?', a: 'Access length is shown on each plan card — from 30 days up to 12 months for AI Live Patient subscriptions.' },
   ],
@@ -93,9 +92,9 @@ export const DEFAULTS = {
 
 /* Contact details — navbar, footer and contact page */
 export const CONTACT = {
-  email: 'drakmsacademy@gmail.com',
-  phone: '+91 960 5500 648',
-  whatsapp: 'https://wa.me/919605500648',
+  email: 'contact@drskmacademy.com',
+  phone: '+91 9605500678',
+  whatsapp: 'https://wa.me/919605500678',
   instagram: '#',
   facebook: '#',
   youtube: '#',

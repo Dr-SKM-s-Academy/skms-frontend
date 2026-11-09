@@ -133,6 +133,7 @@ body{background:var(--mint);font-family:'Glacial Indifference',system-ui,sans-se
 .marquee{overflow:hidden}
 #faculty{display:flex;gap:40px;width:max-content;animation:marquee 26s linear infinite}
 #faculty:hover{animation-play-state:paused}
+#faculty.is-static{animation:none;margin-inline:auto}   /* every card fits on screen: one centred row, nothing to loop */
 .marquee-group{display:flex;gap:40px}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 20px))}}
 @media (prefers-reduced-motion:reduce){#faculty{animation:none}}
@@ -1106,7 +1107,7 @@ details[open] .chev{transform:rotate(180deg)}
 }
 .site-footer__blurb{
   margin:24px 0 0;max-width:390px;
-  font-size:15px;line-height:1.75;color:rgba(255,255,255,.72);
+  font-size:15px;line-height:1.75;color:rgba(255,255,255,.72);text-wrap:balance;
 }
 .site-footer__social{display:flex;gap:14px;margin-top:26px}
 
@@ -1129,9 +1130,10 @@ details[open] .chev{transform:rotate(180deg)}
   .site-footer{padding:52px 0 22px}
   .site-footer__inner{grid-template-columns:1fr 1fr;gap:32px}
   .site-footer__brand{grid-column:1/-1}
+  .site-footer__logo{gap:8px}
   .site-footer__logo > span:first-child{width:84px;height:84px}
   .site-footer__name{font-size:22px}
-  .site-footer__blurb{margin-top:18px;font-size:14px}
+  .site-footer__blurb{margin-top:14px;max-width:none;font-size:14px;text-align:left;overflow-wrap:break-word}
   .site-footer__social{margin-top:20px}
   .site-footer__bottom{margin-top:32px;flex-direction:column;gap:10px}
   .site-footer__bottom p:last-child{gap:20px}

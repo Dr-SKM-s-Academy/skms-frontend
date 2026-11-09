@@ -197,7 +197,7 @@ function Footer() {
             <span><img src="/img/logo.png" alt="Dr. SKM's Academy" className="h-full w-full object-contain" /></span>
             <span className="site-footer__name">Dr. SKM&#39;s<br />Academy</span>
           </div>
-          <p className="site-footer__blurb">AI-powered clinical learning designed specifically for Gulf licensing examinations. Trusted by 500+ doctors across the GCC.</p>
+          <p className="site-footer__blurb">AI-powered clinical learning designed specifically for Medical Licensing Examinations. Trusted by 500+ doctors across the GCC.</p>
           <div className="site-footer__social"><Socials size={44} /></div>
         </div>
         {col('PLATFORMS', [['HOME', '/'], ['Plans', '/plans'], ['Courses', '/courses'], ['About Us', '/about']])}
