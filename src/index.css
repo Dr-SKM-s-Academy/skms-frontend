@@ -133,6 +133,7 @@ body{background:var(--mint);font-family:'Glacial Indifference',system-ui,sans-se
 .marquee{overflow:hidden}
 #faculty{display:flex;gap:40px;width:max-content;animation:marquee 26s linear infinite}
 #faculty:hover{animation-play-state:paused}
+#faculty.is-static{animation:none;margin-inline:auto}   /* every card fits on screen: one centred row, nothing to loop */
 .marquee-group{display:flex;gap:40px}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 20px))}}
 @media (prefers-reduced-motion:reduce){#faculty{animation:none}}

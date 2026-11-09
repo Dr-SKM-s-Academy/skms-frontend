@@ -9,7 +9,7 @@ const CACHE = 'skm_site';
 const Site = createContext(null);
 
 export function SiteProvider({ children }) {
-  const [site, setSite] = useState(() => ls.get(CACHE) || { cms: {}, plans: null });
+  const [site, setSite] = useState(() => ls.get(CACHE) || { cms: null, plans: null });   // cms null = the API has not answered yet
 
   useEffect(() => {
     const merge = patch => setSite(s => { const next = { ...s, ...patch }; ls.set(CACHE, next); return next; });
@@ -27,6 +27,14 @@ export function useCms(key) {
   const v = useContext(Site).cms?.[key], d = DEFAULTS[key];
   if (Array.isArray(d)) return Array.isArray(v) && v.length ? v : d;
   return { ...d, ...(v && typeof v === 'object' ? v : {}) };
+}
+
+/* Faculty is exactly the admin's list: nothing until the API (or its cache) has answered, and an emptied list stays empty.
+   Never saved, or after Restore defaults, the built-in list stands in — the same one the admin panel shows then. */
+export function useFaculty() {
+  const cms = useContext(Site).cms;
+  if (!cms) return [];
+  return Array.isArray(cms.faculty) ? cms.faculty : DEFAULTS.faculty;
 }
 
 /* every program with at least one plan: live from the database, else the cached or built-in cards */

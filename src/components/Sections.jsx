@@ -4,7 +4,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { ChevronDown, Star } from 'lucide-react';
 import { DEFAULTS, initials, money, safeUrl } from '../lib/content.js';
-import { useCms } from '../lib/site.jsx';
+import { useCms, useFaculty } from '../lib/site.jsx';
 
 export function Rich({ text }) {
   return String(text ?? '').split('\n').map((line, i) => (
@@ -128,7 +128,20 @@ export function PlanCard({ c, onBuy }) {
 }
 
 export function Faculty() {
-  const cards = useCms('faculty').map((f, i) => (
+  const faculty = useFaculty(), hasCards = faculty.length > 0;
+  const rail = useRef(null), group = useRef(null);
+  const [loop, setLoop] = useState(false);
+  useEffect(() => {
+    if (!hasCards) return;
+    const measure = () => setLoop(group.current.offsetWidth > rail.current.clientWidth);
+    const ro = new ResizeObserver(measure);
+    ro.observe(rail.current);
+    ro.observe(group.current);
+    return () => ro.disconnect();
+  }, [hasCards]);
+  if (!hasCards) return null;
+
+  const cards = faculty.map((f, i) => (
     <figure key={i} className="fac">
       <img src={safeUrl(f.photo)} alt={f.name} loading="lazy" />
       <figcaption><b>{f.name}</b><span>{f.role}</span></figcaption>
@@ -141,10 +154,10 @@ export function Faculty() {
         <h2 className="section-head__title">Learn From the Best</h2>
         <p className="section-head__sub">Our multidisciplinary team of licensed specialists, surgeons, and AI media professionals — each an expert in their field.</p>
       </header>
-      {/* second copy makes the right-to-left loop seamless */}
-      <div className="marquee"><div id="faculty">
-        <div className="marquee-group">{cards}</div>
-        <div className="marquee-group" aria-hidden="true">{cards}</div>
+      {/* the second copy only exists when the row overflows the screen and has to loop seamlessly */}
+      <div className="marquee" ref={rail}><div id="faculty" className={loop ? undefined : 'is-static'}>
+        <div className="marquee-group" ref={group}>{cards}</div>
+        {loop && <div className="marquee-group" aria-hidden="true">{cards}</div>}
       </div></div>
     </section>
   );

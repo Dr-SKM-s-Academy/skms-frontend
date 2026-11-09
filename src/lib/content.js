@@ -74,7 +74,6 @@ export const DEFAULTS = {
     { name: 'Dr. Shahana Kuruniyan', role: 'Dermatology', photo: 'img/fac-shahana.jpg' },
     { name: 'Dr. Saadia', role: 'Gen. Physician-Prometric Exam Tutor', photo: 'img/fac-saadia.jpg' },
     { name: 'Dr. Sofia John', role: 'OMSB Licensed Gen. Surgeon', photo: 'img/fac-sofia.jpg' },
-    { name: 'Dr. Suhail Ahamed', role: 'Doctor of AI Media Production', photo: 'img/fac-suhail.jpg' },
     { name: 'Dr. Nandita', role: 'Specialist pediatrician', photo: 'img/fac-nandita.jpg' },
   ],
 
